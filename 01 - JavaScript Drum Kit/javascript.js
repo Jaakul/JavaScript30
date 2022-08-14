@@ -1,27 +1,14 @@
-const key = document.querySelector('key')
-document.addEventListener("keypress",buttonFxn);
-function buttonFxn(event){
-switch (event.key){
-    case "a": document.querySelector("65").play();
+window.addEventListener("keydown",function(e){
+    const audio = document.querySelector(`audio[data-key=${e.code}]`)
+    const audioKey = document.querySelector(`.key[data-key=${e.code}]`)
+console.log(audio);
+if(!audio) return;
+audio.currentTime = 0; 
+audio.play();
+audioKey.classList.add('playing');
 
-    case "s":
 
-    case "d":
-
-    case "f":
-
-    case "g":
-
-    case "h":
-
-    case "j":
-
-    case "k":
-
-    case "l":
+})
 
 
 
-
-}
-}
